@@ -2,8 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Project TERRA-1 | Negligible</title>
+    
+    <!-- Extreme SEO & Open Graph Tags -->
+    <meta name="description" content="Project TERRA-1 by Negligible. Modular rooftop architecture and vertical densification solving the urban housing crisis.">
+    <meta name="keywords" content="architecture, modular housing, vertical densification, parasitic urbanism, negligible, TERRA-1">
+    <meta name="author" content="T Shreyesh Reddy">
+    <link rel="canonical" href="https://negligible.in/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://negligible.in/">
+    <meta property="og:title" content="Project TERRA-1 | Negligible">
+    <meta property="og:description" content="Modular rooftop architecture and vertical densification solving the urban housing crisis.">
+    <meta property="og:image" content="https://negligible.in/og-image.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://negligible.in/">
+    <meta property="twitter:title" content="Project TERRA-1 | Negligible">
+    <meta property="twitter:description" content="Modular rooftop architecture and vertical densification solving the urban housing crisis.">
+    <meta property="twitter:image" content="https://negligible.in/og-image.jpg">
     
     <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +32,11 @@
         tailwind.config = {
             theme: {
                 extend: {
+                    height: {
+                        'screen-dvh': '100dvh',
+                        '150dvh': '150dvh',
+                        '200dvh': '200dvh',
+                    },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         mono: ['Space Mono', 'monospace'],
@@ -157,7 +178,7 @@
         <div class="absolute inset-0 bg-black/80 backdrop-blur-xl cursor-pointer" onclick="closeModal()"></div>
         
         <!-- Modal Content -->
-        <div class="relative bg-[#050505] border border-gray-800 p-10 md:p-14 w-full max-w-md shadow-[0_0_80px_rgba(0,0,0,1)] rounded-sm transform translate-y-10 transition-transform duration-500" id="modal-content">
+        <div class="relative bg-[#050505] border border-gray-800 p-6 md:p-14 w-full max-w-md shadow-[0_0_80px_rgba(0,0,0,1)] rounded-sm transform translate-y-10 transition-transform duration-500 mx-4" id="modal-content">
             <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-600 hover:text-white interactive-hover font-mono text-[9px] tracking-[0.2em] uppercase transition-colors">CLOSE [X]</button>
             
             <h3 class="text-3xl font-thin tracking-wide text-white mb-2">Reserve a Node.</h3>
@@ -217,13 +238,13 @@
     <!-- Scroll Content (4-Part Narrative) -->
     <main class="relative z-10 w-full" id="main-content">
         
-        <section class="h-[150vh] relative pointer-events-none flex flex-col justify-center" id="act1">
-            <div class="sticky top-0 h-screen flex flex-col justify-center items-center px-6 text-center">
+        <section class="h-150dvh relative pointer-events-none flex flex-col justify-center" id="act1">
+            <div class="sticky top-0 h-screen-dvh flex flex-col justify-center items-center px-6 text-center">
                 <div class="max-w-4xl">
-                    <h2 class="text-5xl md:text-[6rem] font-thin leading-none mb-10 text-white text-glow">
+                    <h2 class="text-4xl md:text-[6rem] font-thin leading-none mb-10 text-white text-glow">
                         The ground is <span class="italic text-gray-500">full.</span>
                     </h2>
-                    <p class="text-lg md:text-xl text-brand-muted font-light max-w-2xl mx-auto leading-relaxed text-glow">
+                    <p class="text-base md:text-xl text-brand-muted font-light max-w-2xl mx-auto leading-relaxed text-glow">
                         Urban gridlock. The housing crisis. We have run out of land to build on. The city has suffocated itself at ground level.
                     </p>
                 </div>
@@ -235,8 +256,8 @@
             </div>
         </section>
 
-        <section class="h-[200vh] relative pointer-events-none" id="act2">
-            <div class="sticky top-0 h-screen flex flex-col justify-center items-center px-6 text-center">
+        <section class="h-200dvh relative pointer-events-none" id="act2">
+            <div class="sticky top-0 h-screen-dvh flex flex-col justify-center items-center px-6 text-center">
                 <div class="max-w-4xl">
                     <div class="flex items-center justify-center gap-4 mb-8 opacity-60">
                         <div class="h-[1px] w-8 bg-brand-accent"></div>
@@ -244,18 +265,18 @@
                         <div class="h-[1px] w-8 bg-brand-accent"></div>
                     </div>
 
-                    <h2 class="text-5xl md:text-[5rem] font-thin leading-none mb-10 text-white text-glow">
+                    <h2 class="text-4xl md:text-[5rem] font-thin leading-none mb-10 text-white text-glow">
                         We missed <br/><span class="italic text-gray-500">something.</span>
                     </h2>
-                    <p class="text-lg md:text-xl text-brand-muted font-light max-w-2xl mx-auto leading-relaxed text-glow">
+                    <p class="text-base md:text-xl text-brand-muted font-light max-w-2xl mx-auto leading-relaxed text-glow">
                         Look up. Millions of acres of flat, heat-absorbing rooftops sit completely dead. A massive, untapped canvas. The Second Ground Level.
                     </p>
                 </div>
             </div>
         </section>
 
-        <section class="h-[200vh] relative pointer-events-none" id="act3">
-            <div class="sticky top-0 h-screen flex items-center px-6 md:px-24 xl:px-40">
+        <section class="h-200dvh relative pointer-events-none" id="act3">
+            <div class="sticky top-0 h-screen-dvh flex items-center px-6 md:px-24 xl:px-40">
                 <div class="w-full max-w-xl pointer-events-auto">
                     <div class="flex items-center gap-4 mb-8 opacity-60">
                         <div class="h-[1px] w-8 bg-brand-accent"></div>
@@ -273,8 +294,8 @@
             </div>
         </section>
 
-        <section class="h-[150vh] relative pointer-events-none" id="act4">
-            <div class="sticky top-0 h-screen flex items-center justify-end px-6 md:px-24 xl:px-40">
+        <section class="h-150dvh relative pointer-events-none" id="act4">
+            <div class="sticky top-0 h-screen-dvh flex items-center justify-end px-6 md:px-24 xl:px-40">
                 <div class="w-full max-w-xl pointer-events-auto text-right flex flex-col items-end">
                     <div class="flex items-center gap-4 mb-8 opacity-60">
                         <div class="font-mono text-[9px] text-brand-accent tracking-[0.4em] uppercase">04 / The Utopia</div>
@@ -292,7 +313,7 @@
             </div>
         </section>
 
-        <section class="h-screen relative flex items-center justify-center pointer-events-none z-20" id="footer">
+        <section class="h-screen-dvh relative flex items-center justify-center pointer-events-none z-20" id="footer">
             <div class="text-center pointer-events-auto w-full h-full flex flex-col justify-end pb-24 bg-gradient-to-t from-[#030303] via-transparent to-transparent">
                 <h2 class="text-3xl md:text-5xl font-thin tracking-[0.3em] uppercase mb-16 text-glow text-white">The Sky is the Foundation.</h2>
                 <div class="flex justify-center gap-10 font-mono text-[9px] text-gray-500 uppercase tracking-[0.4em]">
@@ -694,12 +715,16 @@
             }
             animate();
 
+            let cachedWidth = window.innerWidth;
             window.addEventListener('resize', () => {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-                composer.setSize(window.innerWidth, window.innerHeight);
-                bokehPass.uniforms.aspect.value = camera.aspect;
+                if (window.innerWidth !== cachedWidth) {
+                    cachedWidth = window.innerWidth;
+                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+                    composer.setSize(window.innerWidth, window.innerHeight);
+                    bokehPass.uniforms.aspect.value = camera.aspect;
+                }
             });
         }
 
