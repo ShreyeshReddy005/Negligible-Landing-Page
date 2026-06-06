@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Project TERRA-1 | Rooftop Housing & Urban Solutions by Negligible</title>
+    <title>Negligible | Project TERRA-1: Rooftop Housing & Urban Solutions</title>
     
     <!-- Extreme SEO & Open Graph Tags -->
     <meta name="google-site-verification" content="7jx3boJa2CYNjE5B32RQweJpUYFu1QqBEBfByLCXeCA" />
@@ -11,21 +11,11 @@
     <meta name="keywords" content="rooftop housing, urban fabric, rooftop building, architecture, modular housing, vertical densification, parasitic urbanism, negligible, TERRA-1, urban solutions">
     <meta name="author" content="T Shreyesh Reddy">
     <link rel="canonical" href="https://negligible.in/">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://negligible.in/">
-    <meta property="og:title" content="Project TERRA-1 | Negligible">
-    <meta property="og:description" content="Modular rooftop architecture and vertical densification solving the urban housing crisis.">
-    <meta property="og:image" content="https://negligible.in/og-image.jpg">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://negligible.in/">
-    <meta property="twitter:title" content="Project TERRA-1 | Negligible">
-    <meta property="twitter:description" content="Modular rooftop architecture and vertical densification solving the urban housing crisis.">
-    <meta property="twitter:image" content="https://negligible.in/og-image.jpg">
     
     <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Outfit:wght@200;300;400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -40,14 +30,15 @@
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif'],
                         mono: ['Space Mono', 'monospace'],
                     },
                     colors: {
                         brand: {
-                            dark: '#030303',
+                            dark: '#000000',
                             accent: '#ff6600',
-                            text: '#f2f2f2',
-                            muted: '#888888'
+                            text: '#ffffff',
+                            muted: '#e5e7eb'
                         }
                     }
                 }
@@ -76,36 +67,14 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
 
     <style>
-        html { scroll-behavior: auto; cursor: none; }
+        html { scroll-behavior: auto; }
         body {
             margin: 0;
             overflow-x: hidden;
-            background-color: #030303;
-            color: #f2f2f2;
-            cursor: none;
+            background-color: #000000;
+            color: #ffffff;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* Magnetic Dot Cursor */
-        #cursor-dot {
-            position: fixed;
-            top: 0; left: 0;
-            width: 12px; height: 12px;
-            background-color: #f2f2f2;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, mix-blend-mode 0.3s ease;
-            mix-blend-mode: difference;
-        }
-        
-        #cursor-dot.magnetic {
-            width: 80px;
-            height: 80px;
-            background-color: rgba(255, 102, 0, 0.8);
-            mix-blend-mode: normal;
         }
 
         #webgl-canvas {
@@ -118,7 +87,7 @@
 
         /* Cinematic Overlays */
         .vignette {
-            background: radial-gradient(circle, rgba(0,0,0,0) 40%, rgba(3,3,3,0.7) 100%);
+            background: radial-gradient(circle, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%);
             mix-blend-mode: multiply;
         }
         
@@ -140,38 +109,42 @@
 
         #loader {
             position: fixed; inset: 0;
-            background: #030303;
+            background: #000000;
             z-index: 100;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             transition: opacity 2s ease-in-out;
         }
         
-        .loading-bar {
-            width: 150px; height: 1px; background: #333; margin-top: 20px; overflow: hidden;
-        }
-        .loading-progress {
-            width: 0%; height: 100%; background: #ff6600;
-            animation: progress 2.5s cubic-bezier(0.8, 0, 0.2, 1) forwards;
-        }
-        
-        @keyframes progress {
-            0% { width: 0%; }
-            50% { width: 60%; }
-            100% { width: 100%; }
-        }
     </style>
 </head>
 <body>
 
-    <!-- Custom Cursor -->
-    <div id="cursor-dot"></div>
-
-    <!-- Progressive Loading Screen -->
+    <!-- Editorial Preloader -->
     <div id="loader">
-        <h1 class="text-xs font-light tracking-[0.5em] uppercase text-white mb-2">Project TERRA-1</h1>
-        <div class="font-mono text-[8px] tracking-[0.5em] text-gray-600 uppercase">Constructing Reality</div>
-        <div class="loading-bar"><div class="loading-progress"></div></div>
+        <div class="relative flex flex-col items-center">
+            <h1 class="text-2xl md:text-3xl font-outfit font-thin tracking-[0.5em] uppercase text-white mb-6 opacity-80 text-glow">Project TERRA-1</h1>
+            
+            <div class="w-48 h-[1px] bg-white/10 relative overflow-hidden">
+                <div class="absolute top-0 left-0 h-full bg-brand-accent shadow-[0_0_10px_rgba(255,102,0,0.5)] w-0 transition-all duration-200 ease-linear" id="loader-line"></div>
+            </div>
+            
+            <div class="mt-6 font-mono text-[8px] tracking-[0.4em] text-gray-500 uppercase">Constructing Reality</div>
+        </div>
     </div>
+
+    <script>
+        let progress = 0;
+        const lineEl = document.getElementById('loader-line');
+        
+        const loaderInterval = setInterval(() => {
+            progress += Math.random() * 5 + 2; 
+            if (progress >= 100) {
+                progress = 100;
+                clearInterval(loaderInterval);
+            }
+            lineEl.style.width = progress + '%';
+        }, 80);
+    </script>
 
     <!-- Waitlist Modal (Hidden by Default) -->
     <div id="waitlist-modal" class="fixed inset-0 z-[200] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500">
@@ -180,22 +153,32 @@
         
         <!-- Modal Content -->
         <div class="relative bg-[#050505] border border-gray-800 p-6 md:p-14 w-full max-w-md shadow-[0_0_80px_rgba(0,0,0,1)] rounded-sm transform translate-y-10 transition-transform duration-500 mx-4" id="modal-content">
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-600 hover:text-white interactive-hover font-mono text-[9px] tracking-[0.2em] uppercase transition-colors">CLOSE [X]</button>
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white transition-colors font-mono text-[9px] tracking-[0.2em] uppercase">CLOSE [X]</button>
             
             <h3 class="text-3xl font-thin tracking-wide text-white mb-2">Reserve a Node.</h3>
-            <p class="text-brand-muted font-light text-sm mb-10">Join the pioneers of parasitic urbanism. Node availability is strictly limited.</p>
+            <p class="text-gray-300 font-light text-sm mb-10">Join the pioneers of parasitic urbanism. Node availability is strictly limited.</p>
             
             <form id="waitlist-form" onsubmit="submitWaitlist(event)" class="space-y-8">
                 <div>
-                    <label class="block font-mono text-[8px] uppercase tracking-[0.4em] text-gray-500 mb-3">Full Name</label>
-                    <input type="text" id="entry-name" required class="w-full bg-transparent border-b border-gray-800 py-2 text-white focus:outline-none focus:border-brand-accent transition-colors font-light text-sm interactive-hover" placeholder="Enter your name">
+                    <label class="block font-mono text-[8px] uppercase tracking-[0.4em] text-gray-400 mb-3">Full Name</label>
+                    <input type="text" id="entry-name" required class="w-full bg-transparent border-b border-gray-800 py-2 text-white focus:outline-none focus:border-brand-accent transition-colors font-light text-sm" placeholder="Enter your name">
                 </div>
                 <div>
-                    <label class="block font-mono text-[8px] uppercase tracking-[0.4em] text-gray-500 mb-3">Mobile Number</label>
-                    <input type="tel" id="entry-mobile" required class="w-full bg-transparent border-b border-gray-800 py-2 text-white focus:outline-none focus:border-brand-accent transition-colors font-light text-sm interactive-hover" placeholder="+1 (555) 000-0000">
+                    <label class="block font-mono text-[8px] uppercase tracking-[0.4em] text-gray-400 mb-3">Mobile Number</label>
+                    <input type="tel" id="entry-mobile" required class="w-full bg-transparent border-b border-gray-800 py-2 text-white focus:outline-none focus:border-brand-accent transition-colors font-light text-sm" placeholder="+91 98765 43210">
+                </div>
+                <div>
+                    <label class="block font-mono text-[8px] uppercase tracking-[0.4em] text-gray-400 mb-3">What pod do you want on your rooftop?</label>
+                    <select id="entry-pod-type" required class="w-full bg-transparent border-b border-gray-800 py-2 text-white focus:outline-none focus:border-brand-accent transition-colors font-light text-sm appearance-none cursor-pointer">
+                        <option value="" disabled selected class="bg-[#050505] text-gray-500">Select desired function...</option>
+                        <option value="housing" class="bg-[#050505] text-white">Amber / Residential Sanctuary</option>
+                        <option value="hub" class="bg-[#050505] text-white">Cyan / Creator Co-Working Hub</option>
+                        <option value="gym" class="bg-[#050505] text-white">Neon / Wellness & Gym</option>
+                        <option value="undecided" class="bg-[#050505] text-white">Undecided / Flexible</option>
+                    </select>
                 </div>
                 
-                <button type="submit" id="submit-btn" class="w-full relative py-5 bg-brand-accent text-black font-mono text-[10px] font-bold uppercase tracking-[0.4em] rounded-sm interactive-hover transition-all duration-500 shadow-[0_0_20px_rgba(255,102,0,0.2)] hover:shadow-[0_0_40px_rgba(255,102,0,0.6)] mt-8">
+                <button type="submit" id="submit-btn" class="w-full relative py-5 bg-brand-accent text-black font-mono text-[10px] font-bold uppercase tracking-[0.4em] rounded-sm transition-all duration-500 shadow-[0_0_20px_rgba(255,102,0,0.2)] hover:shadow-[0_0_40px_rgba(255,102,0,0.6)] mt-8 hover:bg-white">
                     <span id="btn-text">Submit Application</span>
                 </button>
             </form>
@@ -203,8 +186,8 @@
             <div id="success-msg" class="hidden mt-8 text-center text-brand-accent font-mono text-[10px] tracking-[0.2em] uppercase">
                 Application Received.<br/><span class="text-white">Welcome to TERRA-1.</span>
             </div>
-            <div id="error-msg" class="hidden mt-8 text-center text-red-500 font-mono text-[10px] tracking-[0.2em] uppercase">
-                Error. Database not configured.
+            <div id="error-msg" class="hidden mt-8 text-center text-red-500 font-mono text-[9px] tracking-[0.1em] uppercase leading-relaxed">
+                ERROR. DATABASE NOT CONFIGURED.
             </div>
         </div>
     </div>
@@ -216,114 +199,135 @@
 
     <!-- Global Header HUD -->
     <header class="fixed top-0 left-0 w-full p-5 md:px-12 md:py-10 flex justify-between items-start z-50 pointer-events-none mix-blend-difference">
-        <div class="pointer-events-auto interactive-hover cursor-pointer">
+        <div class="pointer-events-auto cursor-pointer">
             <h1 class="text-lg md:text-2xl font-light tracking-[0.3em] uppercase text-white">Negligible<span class="text-brand-accent">.</span></h1>
-            <div class="font-mono text-[7px] md:text-[9px] text-gray-400 tracking-[0.3em] mt-2 md:mt-3 uppercase">Project TERRA-1</div>
+            <div class="font-mono text-[7px] md:text-[9px] text-gray-300 tracking-[0.3em] mt-2 md:mt-3 uppercase">Project TERRA-1</div>
         </div>
         
         <!-- Global Waitlist Button & Nav -->
         <div class="flex flex-col items-end gap-6 pointer-events-auto">
-            <button onclick="openModal()" class="group relative px-4 py-3 md:px-8 md:py-4 border border-white/20 bg-white/5 backdrop-blur-md text-white font-mono text-[7px] md:text-[9px] font-bold uppercase tracking-[0.4em] rounded-sm interactive-hover transition-all duration-500 hover:bg-brand-accent hover:text-black hover:border-brand-accent hover:scale-105 hover:shadow-[0_0_40px_rgba(255,102,0,0.5)] mix-blend-normal">
+            <button onclick="openModal()" class="group relative px-4 py-3 md:px-8 md:py-4 border border-white/30 bg-white/5 backdrop-blur-md text-white font-mono text-[7px] md:text-[9px] font-bold uppercase tracking-[0.4em] rounded-sm transition-all duration-500 hover:bg-brand-accent hover:text-black hover:border-brand-accent hover:scale-105 hover:shadow-[0_0_40px_rgba(255,102,0,0.5)] mix-blend-normal">
                 <span class="relative z-10 hidden md:inline">Join Waitlist</span>
                 <span class="relative z-10 md:hidden">Waitlist</span>
             </button>
 
-            <nav class="hidden md:flex flex-col items-end gap-3 text-[9px] font-mono tracking-[0.4em] uppercase opacity-70 hover:opacity-100 transition-opacity duration-500 mix-blend-difference text-white">
-                <a href="#act1" class="hover:text-brand-accent transition-colors interactive-hover">01. Crisis</a>
-                <a href="#act2" class="hover:text-brand-accent transition-colors interactive-hover">02. Discovery</a>
-                <a href="#act3" class="hover:text-brand-accent transition-colors interactive-hover">03. Catalyst</a>
-                <a href="#act4" class="hover:text-brand-accent transition-colors interactive-hover">04. Utopia</a>
+            <nav class="flex flex-col items-end gap-2 md:gap-3 text-[7px] md:text-[9px] font-mono tracking-[0.4em] uppercase opacity-80 mix-blend-difference text-white mt-4 md:mt-0">
+                <a href="#act1-track" id="nav-act1" class="transition-all duration-300">01. Crisis</a>
+                <a href="#act2-track" id="nav-act2" class="transition-all duration-300">02. Discovery</a>
+                <a href="#act3-track" id="nav-act3" class="transition-all duration-300">03. Catalyst</a>
+                <a href="#act4-track" id="nav-act4" class="transition-all duration-300">04. Ecosystem</a>
+                <a href="#act5-track" id="nav-act5" class="transition-all duration-300">05. Utopia</a>
             </nav>
         </div>
     </header>
 
-    <!-- Scroll Content (4-Part Narrative) -->
-    <main class="relative z-10 w-full" id="main-content">
+    <!-- Scroll Content (5-Part Narrative) -->
+    <main class="relative w-full" id="main-content">
         
-        <section class="h-150dvh relative pointer-events-none flex flex-col justify-center" id="act1">
-            <div class="sticky top-0 h-screen-dvh flex flex-col justify-center items-center px-6 text-center">
-                <div class="max-w-4xl">
-                    <h2 class="text-4xl md:text-[6rem] font-thin leading-none mb-10 text-white text-glow">
-                        The ground is <span class="italic text-gray-500">full.</span>
+        <!-- FIXED TEXT CONTAINER -->
+        <div id="narrative-container" class="fixed inset-0 pointer-events-none z-10 flex flex-col justify-end p-4 md:p-8 xl:p-12 pb-10 md:pb-16">
+            
+            <!-- Act 1: Center Center -->
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-8 md:p-16 opacity-0" id="act1-text">
+                <div class="max-w-4xl pointer-events-auto">
+                    <h2 class="text-[clamp(2.5rem,8vw,6rem)] font-outfit font-thin tracking-tighter leading-none mb-6 text-white text-glow text-balance">
+                        The ground is <span class="italic text-gray-400">full.</span>
                     </h2>
-                    <p class="text-base md:text-xl text-brand-muted font-light max-w-2xl mx-auto leading-relaxed text-glow">
-                        Urban gridlock. The housing crisis. We have run out of land to build on. The city has suffocated itself at ground level.
+                    <p class="text-base md:text-xl text-gray-300 font-sans font-light max-w-xl mx-auto leading-relaxed text-glow">
+                        The city has suffocated itself at ground level. We have run out of land to build on.
                     </p>
                 </div>
-                
-                <div class="absolute bottom-16 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 opacity-30">
-                    <div class="font-mono text-[8px] tracking-[0.5em] uppercase">Scroll to Ascend</div>
-                    <div class="w-[1px] h-16 bg-gradient-to-t from-brand-accent to-transparent"></div>
+                <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 opacity-50">
+                    <div class="font-mono text-[8px] tracking-[0.5em] uppercase text-white">Scroll to Ascend</div>
+                    <div class="w-[1px] h-12 bg-gradient-to-t from-brand-accent to-transparent"></div>
                 </div>
             </div>
-        </section>
 
-        <section class="h-200dvh relative pointer-events-none" id="act2">
-            <div class="sticky top-0 h-screen-dvh flex flex-col justify-center items-center px-6 text-center">
-                <div class="max-w-4xl">
-                    <div class="flex items-center justify-center gap-4 mb-8 opacity-60">
+            <!-- Act 2: Middle Bottom -->
+            <div class="absolute inset-0 flex flex-col justify-end items-center text-center p-8 md:p-16 pb-20 md:pb-32 opacity-0" id="act2-text">
+                <div class="max-w-3xl pointer-events-auto">
+                    <div class="flex items-center justify-center gap-4 mb-6 opacity-80">
                         <div class="h-[1px] w-8 bg-brand-accent"></div>
                         <div class="font-mono text-[9px] text-brand-accent tracking-[0.4em] uppercase">02 / The Discovery</div>
                         <div class="h-[1px] w-8 bg-brand-accent"></div>
                     </div>
-
-                    <h2 class="text-4xl md:text-[5rem] font-thin leading-none mb-10 text-white text-glow">
-                        We missed <br/><span class="italic text-gray-500">something.</span>
+                    <h2 class="text-[clamp(2.5rem,7vw,5rem)] font-outfit font-thin tracking-tighter leading-none mb-6 text-white text-glow text-balance">
+                        We missed <br/><span class="italic text-gray-400">something.</span>
                     </h2>
-                    <p class="text-base md:text-xl text-brand-muted font-light max-w-2xl mx-auto leading-relaxed text-glow">
-                        Look up. Millions of acres of flat, heat-absorbing rooftops sit completely dead. A massive, untapped canvas for <strong class="font-normal text-white">rooftop housing</strong>. The Second Ground Level. By intertwining with the existing <strong class="font-normal text-white">urban fabric</strong>, we are using these <strong class="font-normal text-white">rooftop buildings</strong> to forge tangible <strong class="font-normal text-white">urban solutions</strong>.
+                    <p class="text-base md:text-xl text-gray-300 font-sans font-light leading-relaxed text-glow">
+                        Millions of acres of flat, dead rooftops. A massive, untapped canvas for <strong class="font-normal text-white">rooftop housing</strong>. We are intertwining with the <strong class="font-normal text-white">urban fabric</strong> to forge tangible <strong class="font-normal text-white">urban solutions</strong>.
                     </p>
                 </div>
             </div>
-        </section>
 
-        <section class="h-200dvh relative pointer-events-none" id="act3">
-            <div class="sticky top-0 h-screen-dvh flex items-center px-6 md:px-24 xl:px-40">
-                <div class="w-full max-w-xl pointer-events-auto">
-                    <div class="flex items-center gap-4 mb-8 opacity-60">
+            <!-- Act 3: Left Side Bottom -->
+            <div class="absolute inset-0 flex flex-col justify-end items-start text-left p-6 md:p-12 xl:px-20 pb-12 md:pb-20 opacity-0" id="act3-text">
+                <div class="max-w-2xl pointer-events-auto flex flex-col items-start">
+                    <div class="flex items-center gap-4 mb-6 opacity-80">
                         <div class="h-[1px] w-8 bg-brand-accent"></div>
                         <div class="font-mono text-[9px] text-brand-accent tracking-[0.4em] uppercase">03 / The Catalyst</div>
                     </div>
-                    
-                    <h3 class="text-4xl md:text-[4rem] font-thin leading-none mb-10 text-white text-glow">
+                    <h3 class="text-[clamp(2.5rem,7vw,5rem)] font-outfit font-thin tracking-tighter leading-none mb-6 text-white text-glow text-balance">
                         The TERRA-1 Node.
                     </h3>
-                    
-                    <p class="text-base md:text-lg text-brand-muted font-light leading-relaxed mb-12 text-glow max-w-lg">
-                        Lightweight. Modular. Prefabricated. It rests gently on existing rooftops. No digging. No excavation. It deploys in under 24 hours. It just works.
+                    <p class="text-base md:text-xl text-gray-300 font-sans font-light leading-relaxed mb-12 text-glow text-left">
+                        Lightweight. Modular. Prefabricated. It rests gently on existing rooftops. No digging. No excavation.
                     </p>
                 </div>
             </div>
-        </section>
 
-        <section class="h-150dvh relative pointer-events-none" id="act4">
-            <div class="sticky top-0 h-screen-dvh flex items-center justify-end px-6 md:px-24 xl:px-40">
-                <div class="w-full max-w-xl pointer-events-auto text-right flex flex-col items-end">
-                    <div class="flex items-center gap-4 mb-8 opacity-60">
-                        <div class="font-mono text-[9px] text-brand-accent tracking-[0.4em] uppercase">04 / The Utopia</div>
+            <!-- Act 4: Right Side Bottom (Ecosystem) -->
+            <div class="absolute inset-0 flex flex-col justify-end items-end text-right p-6 md:p-12 xl:px-20 pb-12 md:pb-20 opacity-0" id="act4-text">
+                <div class="max-w-3xl pointer-events-auto flex flex-col items-end">
+                    <div class="flex items-center gap-4 mb-6 opacity-80">
+                        <div class="font-mono text-[9px] text-brand-accent tracking-[0.4em] uppercase">04 / The Ecosystem</div>
                         <div class="h-[1px] w-8 bg-brand-accent"></div>
                     </div>
-                    
-                    <h3 class="text-4xl md:text-[4rem] font-thin leading-none mb-10 text-white text-glow">
-                        Parasitic <br/>Urbanism.
+                    <h3 class="text-[clamp(2.5rem,7vw,5rem)] font-outfit font-thin tracking-tighter leading-none mb-6 text-white text-glow text-balance">
+                        The Ecosystem.
                     </h3>
-                    
-                    <p class="text-base md:text-lg text-brand-muted font-light leading-relaxed mb-16 text-glow max-w-lg text-right">
-                        Dead roofs become interconnected micro-communities. Private sleeping nodes merge with communal hubs and long corridors. The future of the city starts today.
+                    <p class="text-base md:text-xl text-gray-300 font-sans font-light leading-relaxed text-glow text-right max-w-xl">
+                        We don't just drop pods; we spawn ecosystems. A living network color-coded by intent: Amber sanctuaries for rest, Cyan hubs for creation, and Neon zones for energy. A true parasitic city.
                     </p>
                 </div>
             </div>
-        </section>
 
-        <section class="h-screen-dvh relative flex items-center justify-center pointer-events-none z-20" id="footer">
-            <div class="text-center pointer-events-auto w-full h-full flex flex-col justify-end pb-24 bg-gradient-to-t from-[#030303] via-transparent to-transparent">
-                <h2 class="text-3xl md:text-5xl font-thin tracking-[0.3em] uppercase mb-16 text-glow text-white">The Sky is the Foundation.</h2>
-                <div class="flex justify-center gap-10 font-mono text-[9px] text-gray-500 uppercase tracking-[0.4em]">
-                    <a href="#" class="hover:text-white transition-colors interactive-hover">Twitter</a>
-                    <a href="#" class="hover:text-white transition-colors interactive-hover">Instagram</a>
-                    <a href="#" class="hover:text-white transition-colors interactive-hover">Manifesto</a>
+            <!-- Act 5: Center Center (Utopia) -->
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-8 md:p-16 opacity-0" id="act5-text">
+                <div class="max-w-3xl pointer-events-auto">
+                    <div class="flex items-center justify-center gap-4 mb-6 opacity-80">
+                        <div class="h-[1px] w-8 bg-brand-accent"></div>
+                        <div class="font-mono text-[9px] text-brand-accent tracking-[0.4em] uppercase">05 / The Utopia</div>
+                        <div class="h-[1px] w-8 bg-brand-accent"></div>
+                    </div>
+                    <h3 class="text-[clamp(2.5rem,8vw,6rem)] font-outfit font-thin tracking-tighter leading-none mb-6 text-white text-glow text-balance">
+                        Parasitic <br/>Urbanism.
+                    </h3>
+                    <p class="text-base md:text-xl text-gray-300 font-sans font-light leading-relaxed text-glow">
+                        Dead roofs become interconnected micro-communities. The future starts today.
+                    </p>
                 </div>
-                <div class="mt-20 flex flex-col gap-3 font-mono text-[8px] text-gray-600 tracking-[0.3em] uppercase">
+            </div>
+            
+        </div>
+
+        <!-- INVISIBLE SCROLL TRACKS -->
+        <section class="h-[150vh]" id="act1-track"></section>
+        <section class="h-[150vh]" id="act2-track"></section>
+        <section class="h-[150vh]" id="act3-track"></section>
+        <section class="h-[300vh]" id="act4-track"></section>
+        <section class="h-[150vh]" id="act5-track"></section>
+
+        <!-- FOOTER -->
+        <section class="h-screen-dvh relative flex items-center justify-center pointer-events-auto z-20" id="footer">
+            <div class="text-center w-full h-full flex flex-col justify-end pb-24 bg-gradient-to-t from-[#030303] via-transparent to-transparent">
+                <h2 class="text-3xl md:text-5xl font-outfit font-thin tracking-[0.3em] uppercase mb-16 text-glow text-white">The Sky is the Foundation.</h2>
+                <div class="flex justify-center gap-10 font-mono text-[9px] text-gray-400 uppercase tracking-[0.4em]">
+                    <a href="#" class="hover:text-white transition-colors">Twitter</a>
+                    <a href="#" class="hover:text-white transition-colors">Instagram</a>
+                    <a href="#" class="hover:text-white transition-colors">Manifesto</a>
+                </div>
+                <div class="mt-20 flex flex-col gap-3 font-mono text-[8px] text-gray-500 tracking-[0.3em] uppercase">
                     <p>&copy; 2026 Negligible. Project TERRA-1.</p>
                     <p>Parasitic Urbanism: Modular Rooftop Vertical Densification by T Shreyesh Reddy</p>
                 </div>
@@ -332,13 +336,8 @@
 
     </main>
 
-    <!-- ========================================== -->
-    <!-- SUPABASE JS BACKEND INTEGRATION            -->
-    <!-- ========================================== -->
+    <!-- SUPABASE JS BACKEND INTEGRATION -->
     <script>
-        // ==========================================
-        // SUPABASE JS BACKEND INTEGRATION
-        // ==========================================
         const SUPABASE_URL = 'https://ehlfkamhwmmuumqytvqa.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVobGZrYW1od21tdXVtcXl0dnFhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2NTU5MDEsImV4cCI6MjA5NjIzMTkwMX0.H296XO1aza9VUyW0EsmAWfLrJcOETn-k6_917a-YWIU';
         
@@ -363,14 +362,11 @@
 
         async function submitWaitlist(e) {
             e.preventDefault();
-            
-            if (!supabaseClient) {
-                alert("Supabase Backend Not Configured! Please open index.html and paste your Supabase URL and Anon Key at line ~266.");
-                return;
-            }
+            if (!supabaseClient) return;
 
             const name = document.getElementById('entry-name').value;
             const mobile = document.getElementById('entry-mobile').value;
+            const podType = document.getElementById('entry-pod-type').value;
             const btnText = document.getElementById('btn-text');
             const submitBtn = document.getElementById('submit-btn');
             
@@ -378,21 +374,15 @@
             submitBtn.classList.add('opacity-50', 'pointer-events-none');
 
             try {
-                // Formatting mobile to numeric to match the user's Supabase schema
                 const numericMobile = mobile.replace(/[^0-9]/g, '');
-
-                const { data, error } = await supabaseClient
-                    .from('waitlist')
-                    .insert([{ name: name, number: numericMobile }]);
-
+                const { data, error } = await supabaseClient.from('waitlist').insert([{ name: name, number: numericMobile, pod_type: podType }]);
                 if (error) throw error;
-
-                // Success!
+                
                 document.getElementById('waitlist-form').style.display = 'none';
                 document.getElementById('success-msg').style.display = 'block';
                 document.getElementById('error-msg').style.display = 'none';
             } catch (error) {
-                console.error("Supabase Error:", error);
+                document.getElementById('error-msg').innerText = "ERROR: " + (error.message || JSON.stringify(error));
                 document.getElementById('error-msg').style.display = 'block';
                 btnText.innerText = "Submit Application";
                 submitBtn.classList.remove('opacity-50', 'pointer-events-none');
@@ -400,28 +390,16 @@
         }
     </script>
 
-    <!-- ========================================== -->
-    <!-- 3D WEBGL CORE ENGINE & POST-PROCESSING     -->
-    <!-- ========================================== -->
+    <!-- 3D WEBGL CORE ENGINE & POST-PROCESSING -->
     <script>
-        // Custom Magnetic Cursor Logic
-        const cursorDot = document.getElementById('cursor-dot');
         let cursorX = window.innerWidth / 2;
         let cursorY = window.innerHeight / 2;
         
         document.addEventListener('mousemove', (e) => {
             cursorX = e.clientX;
             cursorY = e.clientY;
-            cursorDot.style.left = cursorX + 'px';
-            cursorDot.style.top = cursorY + 'px';
         });
 
-        document.querySelectorAll('.interactive-hover, button').forEach(el => {
-            el.addEventListener('mouseenter', () => cursorDot.classList.add('magnetic'));
-            el.addEventListener('mouseleave', () => cursorDot.classList.remove('magnetic'));
-        });
-
-        // Initialize 3D Experience
         function initExperience() {
             gsap.registerPlugin(ScrollTrigger);
 
@@ -448,95 +426,99 @@
 
             const canvas = document.querySelector('#webgl-canvas');
             const scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x050505);
-            scene.fog = new THREE.FogExp2(0x050505, 0.012);
+            scene.background = new THREE.Color(0x000000);
+            scene.fog = new THREE.FogExp2(0x000000, 0.012);
 
             const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 500);
             
-            const renderer = new THREE.WebGLRenderer({ 
-                canvas: canvas, 
-                antialias: false, 
-                powerPreference: "high-performance"
-            });
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: false, powerPreference: "high-performance" });
             renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // Capped for performance
             renderer.shadowMap.enabled = true;
             renderer.shadowMap.type = THREE.PCFSoftShadowMap;
             renderer.toneMapping = THREE.ACESFilmicToneMapping;
             renderer.toneMappingExposure = 1.2;
 
             const renderPass = new THREE.RenderPass(scene, camera);
-            
-            const bokehPass = new THREE.BokehPass(scene, camera, {
-                focus: 30.0,      
-                aperture: 0.0003, 
-                maxblur: 0.012,
-                width: window.innerWidth,
-                height: window.innerHeight
-            });
-
+            const bokehPass = new THREE.BokehPass(scene, camera, { focus: 30.0, aperture: 0.0003, maxblur: 0.012, width: window.innerWidth, height: window.innerHeight });
             const composer = new THREE.EffectComposer(renderer);
             composer.addPass(renderPass);
             composer.addPass(bokehPass);
 
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.35);
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.15); // Darker ambient for deeper shadows
             scene.add(ambientLight);
 
-            const dirLight = new THREE.DirectionalLight(0xfff5e6, 2.0); 
-            dirLight.position.set(40, 50, -40);
+            const dirLight = new THREE.DirectionalLight(0xffeedd, 3.0);  // Stronger, warmer key light
+            dirLight.position.set(60, 80, -60); // Higher angle for dramatic shadows
             dirLight.castShadow = true;
             dirLight.shadow.mapSize.width = 2048;
             dirLight.shadow.mapSize.height = 2048;
-            dirLight.shadow.camera.left = -50;
-            dirLight.shadow.camera.right = 50;
-            dirLight.shadow.camera.top = 50;
-            dirLight.shadow.camera.bottom = -50;
-            dirLight.shadow.camera.near = 0.5;
-            dirLight.shadow.camera.far = 200;
+            dirLight.shadow.camera.near = 10;
+            dirLight.shadow.camera.far = 150;
+            dirLight.shadow.camera.left = -40;
+            dirLight.shadow.camera.right = 40;
+            dirLight.shadow.camera.top = 40;
+            dirLight.shadow.camera.bottom = -40;
             dirLight.shadow.bias = -0.0005;
             scene.add(dirLight);
 
-            const fillLight = new THREE.DirectionalLight(0x4466ff, 0.5); 
-            fillLight.position.set(-30, 20, 30);
+            const fillLight = new THREE.DirectionalLight(0x3355ff, 0.8); // Cooler, slightly stronger fill
+            fillLight.position.set(-40, 30, 40);
             scene.add(fillLight);
 
             const rimLight = new THREE.DirectionalLight(0x77aaff, 1.5);
-            rimLight.position.set(-50, 20, -50);
+            rimLight.position.set(-60, 20, -60);
             scene.add(rimLight);
 
             const plinthGeo = new THREE.PlaneGeometry(300, 300);
             const plinthMat = new THREE.MeshStandardMaterial({ color: 0x020202, roughness: 0.1, metalness: 0.8 });
             const plinth = new THREE.Mesh(plinthGeo, plinthMat);
             plinth.rotation.x = -Math.PI / 2;
-            plinth.position.y = 0;
             plinth.receiveShadow = true;
             scene.add(plinth);
 
-            const cityGroup = new THREE.Group();
-            const baseMat = new THREE.MeshStandardMaterial({ color: 0x1f1f1f, roughness: 0.8, metalness: 0.2 });
-            
-            const podBodyMat = new THREE.MeshStandardMaterial({ color: 0x222222, roughness: 0.5, metalness: 0.4 }); 
-            const podWindowMat = new THREE.MeshStandardMaterial({ color: 0x000000, emissive: 0xff6600, emissiveIntensity: 2.5, roughness: 0.1, metalness: 0.9 });
-            const solarMat = new THREE.MeshStandardMaterial({ color: 0x0a0a0a, roughness: 0.2, metalness: 0.8 });
+            // Architectural Blueprint Grid
+            const gridHelper = new THREE.GridHelper(300, 150, 0x222222, 0x0a0a0a);
+            gridHelper.position.y = 0.02;
+            scene.add(gridHelper);
 
-            function createPod(type) {
+            // Host Building Materials (Typologies)
+            const commercialMat = new THREE.MeshStandardMaterial({ color: 0x1f1f1f, roughness: 0.4, metalness: 0.8, emissive: 0x001133 });
+            const residentialMat = new THREE.MeshStandardMaterial({ color: 0x22201e, roughness: 0.8, metalness: 0.2, emissive: 0x1a0d00 });
+            const institutionalMat = new THREE.MeshStandardMaterial({ color: 0x1a1a1a, roughness: 0.6, metalness: 0.5, emissive: 0x111111 });
+            
+            // Pod Materials (Typologies)
+            const podBodyMat = new THREE.MeshStandardMaterial({ color: 0x222222, roughness: 0.5, metalness: 0.4 }); 
+            const solarMat = new THREE.MeshStandardMaterial({ color: 0x0a0a0a, roughness: 0.2, metalness: 0.8 });
+            
+            const windowGlows = {
+                housing: { color: 0x000000, emissive: 0xffaa00, emissiveIntensity: 2.5 },
+                hub: { color: 0x000000, emissive: 0x00ffff, emissiveIntensity: 2.5 },
+                gym: { color: 0x000000, emissive: 0x33ff00, emissiveIntensity: 4.0 }
+            };
+
+            function createPod(typeStr, functionType) {
                 const podGroup = new THREE.Group();
                 let w = 1.4, h = 1.0, d = 1.6;
 
-                if (type === 'sleeper') { w = 1.2; h = 1.0; d = 1.2; }
-                else if (type === 'hub') { w = 2.4; h = 1.0; d = 1.6; }
-                else if (type === 'corridor') { w = 0.8; h = 1.0; d = 2.4; }
+                if (typeStr === 'sleeper') { w = 1.2; h = 1.0; d = 1.2; }
+                else if (typeStr === 'hub') { w = 2.4; h = 1.0; d = 1.6; }
+                else if (typeStr === 'corridor') { w = 0.8; h = 1.0; d = 2.4; }
 
                 const shellGeo = THREE.RoundedBoxGeometry ? new THREE.RoundedBoxGeometry(w, h, d, 4, 0.08) : new THREE.BoxGeometry(w, h, d);
                 const shellMesh = new THREE.Mesh(shellGeo, podBodyMat);
                 shellMesh.castShadow = true; shellMesh.receiveShadow = true;
                 
+                // Assign glow based on function type
+                const glowSettings = windowGlows[functionType] || windowGlows.housing;
+                const windowMat = new THREE.MeshStandardMaterial({ color: glowSettings.color, emissive: glowSettings.emissive, emissiveIntensity: glowSettings.emissiveIntensity, roughness: 0.1, metalness: 0.9 });
+                
                 const glassGeo = new THREE.BoxGeometry(w + 0.02, h * 0.35, 0.2);
-                const glassMesh = new THREE.Mesh(glassGeo, podWindowMat);
+                const glassMesh = new THREE.Mesh(glassGeo, windowMat);
                 glassMesh.position.set(0, 0.1, d/2 - 0.05);
                 
                 const interiorGeo = new THREE.BoxGeometry(w - 0.2, h * 0.3, 0.1);
-                const interiorMat = new THREE.MeshStandardMaterial({ color: 0xffaa00, emissive: 0xff6600, emissiveIntensity: 2.5 });
+                const interiorMat = new THREE.MeshStandardMaterial({ color: glowSettings.emissive, emissive: glowSettings.emissive, emissiveIntensity: glowSettings.emissiveIntensity });
                 const interiorMesh = new THREE.Mesh(interiorGeo, interiorMat);
                 interiorMesh.position.set(0, 0.1, d/2 - 0.04);
                 
@@ -544,80 +526,106 @@
                 const roofMesh = new THREE.Mesh(roofGeo, solarMat);
                 roofMesh.position.set(0, h/2 + 0.01, 0); 
                 
-                const baseGeo = new THREE.BoxGeometry(w - 0.1, 0.1, d - 0.1);
-                const chassisMat = new THREE.MeshStandardMaterial({ color: 0x111111, roughness: 0.8, metalness: 0.9 });
-                const baseMesh = new THREE.Mesh(baseGeo, chassisMat);
-                baseMesh.position.set(0, -h/2 + 0.05, 0);
-                
                 podGroup.add(shellMesh);
                 podGroup.add(glassMesh);
                 podGroup.add(interiorMesh);
                 podGroup.add(roofMesh);
-                podGroup.add(baseMesh);
 
-                return { mesh: podGroup, height: h };
+                return { mesh: podGroup, height: h, windowMat: windowMat, interiorMat: interiorMat, func: functionType };
             }
 
+            const cityGroup = new THREE.Group();
             let targetBuildingPos = new THREE.Vector3(0, 0, 0);
             const gridExtents = 36; 
-            const act4Pods = []; 
             
+            // Track pods by function for GSAP pulsing
+            const allPods = []; 
+
+            // InstancedMesh Optimization
+            const baseGeo = new THREE.BoxGeometry(1, 1, 1);
+            const instRes = new THREE.InstancedMesh(baseGeo, residentialMat, 400);
+            const instCom = new THREE.InstancedMesh(baseGeo, commercialMat, 400);
+            const instInst = new THREE.InstancedMesh(baseGeo, institutionalMat, 400);
+            
+            instRes.castShadow = false; instRes.receiveShadow = true; // Optimization: Only hero pods cast shadow
+            instCom.castShadow = false; instCom.receiveShadow = true;
+            instInst.castShadow = false; instInst.receiveShadow = true;
+            
+            let countRes = 0, countCom = 0, countInst = 0;
+            const dummy = new THREE.Object3D();
+
             for(let x = -gridExtents; x <= gridExtents; x += 4) {
                 for(let z = -gridExtents; z <= gridExtents; z += 4) {
                     
                     let height = 2 + Math.random() * 4;
-                    if (z < -4) { height += Math.pow(Math.abs(z + 4) / 8, 2) * 5; }
-                    if (Math.abs(x) > 12) { height += Math.pow((Math.abs(x) - 12) / 8, 2) * 3; }
-                    if (z > 4) { height = 1 + Math.random() * 2; }
-                    if (x === 0 && z === -4) { height = 12; }
+                    let type = 'res';
 
-                    const geo = new THREE.BoxGeometry(3.2, height, 3.2); 
-                    const mesh = new THREE.Mesh(geo, baseMat);
-                    mesh.castShadow = true; mesh.receiveShadow = true;
+                    if (z < -4) { height += Math.pow(Math.abs(z + 4) / 8, 2) * 5; type = 'com'; }
+                    if (Math.abs(x) > 12) { height += Math.pow((Math.abs(x) - 12) / 8, 2) * 3; type = 'com'; }
+                    if (z > 4) { height = 1 + Math.random() * 2; type = 'inst'; }
+                    if (x === 0 && z === -4) { height = 12; type = 'com'; }
 
-                    const roofGroup = new THREE.Group();
-                    roofGroup.position.y = height/2; 
-                    mesh.add(roofGroup);
+                    dummy.scale.set(3.2, height, 3.2);
+                    dummy.position.set(x, height/2, z);
+                    dummy.updateMatrix();
+
+                    if(type === 'res') instRes.setMatrixAt(countRes++, dummy.matrix);
+                    else if(type === 'com') instCom.setMatrixAt(countCom++, dummy.matrix);
+                    else instInst.setMatrixAt(countInst++, dummy.matrix);
 
                     const dist = Math.sqrt(x*x + z*z);
                     if (Math.random() > 0.4 && dist < 25) {
                         const rand = Math.random();
+                        const funcs = ['housing', 'hub', 'gym'];
+                        const podFunc = funcs[Math.floor(Math.random() * funcs.length)];
                         
                         if (rand > 0.8) {
-                            const p = createPod('hub');
-                            p.mesh.position.set(0, p.height/2, 0);
+                            const p = createPod('hub', podFunc);
+                            p.mesh.position.set(x, height + p.height/2 + 15, z); // Start high for drop-in
                             p.mesh.scale.set(0, 0, 0);
-                            roofGroup.add(p.mesh); act4Pods.push(p.mesh);
+                            p.targetY = height + p.height/2;
+                            cityGroup.add(p.mesh); allPods.push(p);
                         } else if (rand > 0.5) {
-                            const p = createPod('corridor');
-                            p.mesh.position.set(0, p.height/2, 0);
+                            const p = createPod('corridor', podFunc);
+                            p.mesh.position.set(x, height + p.height/2 + 15, z);
                             p.mesh.scale.set(0, 0, 0);
-                            roofGroup.add(p.mesh); act4Pods.push(p.mesh);
+                            p.targetY = height + p.height/2;
+                            cityGroup.add(p.mesh); allPods.push(p);
                         } else {
-                            const p1 = createPod('sleeper');
-                            p1.mesh.position.set(-0.7, p1.height/2, 0);
+                            const p1 = createPod('sleeper', podFunc);
+                            p1.mesh.position.set(x - 0.7, height + p1.height/2 + 15, z);
                             p1.mesh.scale.set(0, 0, 0);
-                            roofGroup.add(p1.mesh); act4Pods.push(p1.mesh);
+                            p1.targetY = height + p1.height/2;
+                            cityGroup.add(p1.mesh); allPods.push(p1);
                             
-                            const p2 = createPod('sleeper');
-                            p2.mesh.position.set(0.7, p2.height/2, 0);
+                            const p2 = createPod('sleeper', podFunc);
+                            p2.mesh.position.set(x + 0.7, height + p2.height/2 + 15, z);
                             p2.mesh.scale.set(0, 0, 0);
-                            roofGroup.add(p2.mesh); act4Pods.push(p2.mesh);
+                            p2.targetY = height + p2.height/2;
+                            cityGroup.add(p2.mesh); allPods.push(p2);
                         }
                     }
 
-                    mesh.position.set(x, height/2, z);
-                    cityGroup.add(mesh);
-
                     if (x === 0 && z === -4) {
-                        targetBuildingPos.copy(mesh.position);
-                        targetBuildingPos.y += height/2; 
+                        targetBuildingPos.set(x, height, z);
                     }
                 }
             }
+            
+            instRes.count = countRes;
+            instCom.count = countCom;
+            instInst.count = countInst;
+            instRes.instanceMatrix.needsUpdate = true;
+            instCom.instanceMatrix.needsUpdate = true;
+            instInst.instanceMatrix.needsUpdate = true;
+            
+            cityGroup.add(instRes);
+            cityGroup.add(instCom);
+            cityGroup.add(instInst);
             scene.add(cityGroup);
 
-            const heroPodObj = createPod('hero');
+            // The Hero Pod
+            const heroPodObj = createPod('hero', 'housing');
             const mainPodGroup = heroPodObj.mesh;
 
             const podLight = new THREE.PointLight(0xff6600, 2.5, 12);
@@ -636,67 +644,82 @@
             const dofTarget = { focus: 40.0 };
             const currentDof = { focus: 40.0 };
 
-            gsap.to(camTargetPos, {
-                x: 8, y: 5, z: 22, ease: "none", 
-                scrollTrigger: { trigger: "#act1", start: "top top", end: "bottom top", scrub: true }
-            });
+            // =====================================
+            // GSAP SCROLL TRIGGERS
+            // =====================================
 
-            gsap.to(camTargetPos, {
-                x: 18, y: 35, z: 22, ease: "none",
-                scrollTrigger: { trigger: "#act2", start: "top bottom", end: "center center", scrub: true }
-            });
-            gsap.to(camTargetLookAt, {
-                x: 0, y: 5, z: 0, ease: "none",
-                scrollTrigger: { trigger: "#act2", start: "top bottom", end: "center center", scrub: true }
-            });
+            gsap.fromTo("#act1-text", { opacity: 1 }, { opacity: 0, ease: "none", scrollTrigger: { trigger: "#act2-track", start: "top bottom", end: "30% bottom", scrub: 1.5 }});
+            
+            gsap.fromTo("#act2-text", { opacity: 0 }, { opacity: 1, ease: "none", scrollTrigger: { trigger: "#act2-track", start: "30% bottom", end: "60% bottom", scrub: 1.5 }});
+            gsap.to("#act2-text", { opacity: 0, ease: "none", scrollTrigger: { trigger: "#act3-track", start: "top bottom", end: "30% bottom", scrub: 1.5 }});
+            
+            gsap.fromTo("#act3-text", { opacity: 0 }, { opacity: 1, ease: "none", scrollTrigger: { trigger: "#act3-track", start: "30% bottom", end: "60% bottom", scrub: 1.5 }});
+            gsap.to("#act3-text", { opacity: 0, ease: "none", scrollTrigger: { trigger: "#act4-track", start: "top bottom", end: "30% bottom", scrub: 1.5 }});
+            
+            gsap.fromTo("#act4-text", { opacity: 0 }, { opacity: 1, ease: "none", scrollTrigger: { trigger: "#act4-track", start: "10% bottom", end: "25% bottom", scrub: 1.5 }});
+            gsap.to("#act4-text", { opacity: 0, ease: "none", scrollTrigger: { trigger: "#act5-track", start: "top bottom", end: "10% bottom", scrub: 1.5 }});
 
-            gsap.to(camTargetPos, {
-                x: targetBuildingPos.x + 3.5, y: targetBuildingPos.y + 2, z: targetBuildingPos.z + 7, ease: "none",
-                scrollTrigger: { trigger: "#act3", start: "top bottom", end: "center center", scrub: true }
-            });
-            gsap.to(camTargetLookAt, {
-                x: targetBuildingPos.x, y: targetBuildingPos.y, z: targetBuildingPos.z, ease: "none",
-                scrollTrigger: { trigger: "#act3", start: "top bottom", end: "center center", scrub: true }
+            gsap.fromTo("#act5-text", { opacity: 0 }, { opacity: 1, ease: "none", scrollTrigger: { trigger: "#act5-track", start: "5% bottom", end: "20% bottom", scrub: 1.5 }});
+            gsap.to("#act5-text", { opacity: 0, ease: "none", scrollTrigger: { trigger: "#footer", start: "top bottom", end: "top center", scrub: 1.5 }});
+
+            // CAMERA ANIMATIONS LINKED TO 5 TRACKS
+            gsap.to(camTargetPos, { x: 8, y: 5, z: 22, ease: "none", scrollTrigger: { trigger: "#act1-track", start: "top top", end: "bottom top", scrub: 1.5 }});
+
+            gsap.to(camTargetPos, { x: 18, y: 35, z: 22, ease: "none", scrollTrigger: { trigger: "#act2-track", start: "top bottom", end: "center center", scrub: 1.5 }});
+            gsap.to(camTargetLookAt, { x: 0, y: 5, z: 0, ease: "none", scrollTrigger: { trigger: "#act2-track", start: "top bottom", end: "center center", scrub: 1.5 }});
+
+            gsap.to(camTargetPos, { x: targetBuildingPos.x + 3.5, y: targetBuildingPos.y + 2, z: targetBuildingPos.z + 7, ease: "none", scrollTrigger: { trigger: "#act3-track", start: "top bottom", end: "center center", scrub: 1.5 }});
+            gsap.to(camTargetLookAt, { x: targetBuildingPos.x, y: targetBuildingPos.y, z: targetBuildingPos.z, ease: "none", scrollTrigger: { trigger: "#act3-track", start: "top bottom", end: "center center", scrub: 1.5 }});
+            gsap.to(dofTarget, { focus: 8.0, ease: "none", scrollTrigger: { trigger: "#act3-track", start: "top bottom", end: "center center", scrub: 1.5 }});
+
+            // Hero pod pops in Act 3
+            gsap.to(mainPodGroup.scale, { x: 1, y: 1, z: 1, ease: "back.out(1.5)", scrollTrigger: { trigger: "#act3-track", start: "top 60%", end: "center center", scrub: 1.5 }});
+
+            // Act 4: The Ecosystem - Camera pans across city, pods drop in realistically
+            gsap.to(camTargetPos, { x: targetBuildingPos.x - 10, y: targetBuildingPos.y + 10, z: targetBuildingPos.z + 15, ease: "none", scrollTrigger: { trigger: "#act4-track", start: "top bottom", end: "bottom bottom", scrub: 1.5 }});
+            gsap.to(camTargetLookAt, { x: 0, y: 10, z: 0, ease: "none", scrollTrigger: { trigger: "#act4-track", start: "top bottom", end: "bottom bottom", scrub: 1.5 }});
+            gsap.to(dofTarget, { focus: 22.0, ease: "none", scrollTrigger: { trigger: "#act4-track", start: "top bottom", end: "bottom bottom", scrub: 1.5 }});
+            
+            // THE DROP-IN ANIMATION (Scrubbed for perfect reversibility)
+            const dropTl = gsap.timeline({
+                scrollTrigger: { trigger: "#act4-track", start: "20% bottom", end: "80% bottom", scrub: 1.5 }
             });
             
-            gsap.to(dofTarget, {
-                focus: 8.0, ease: "none",
-                scrollTrigger: { trigger: "#act3", start: "top bottom", end: "center center", scrub: true }
-            });
-
-            gsap.to(mainPodGroup.scale, {
-                x: 1, y: 1, z: 1, ease: "none", 
-                scrollTrigger: { trigger: "#act3", start: "top 60%", end: "center center", scrub: true }
-            });
-
-            gsap.to(camTargetPos, {
-                x: targetBuildingPos.x - 15, y: targetBuildingPos.y + 18, z: targetBuildingPos.z + 18, ease: "none",
-                scrollTrigger: { trigger: "#act4", start: "top bottom", endTrigger: "#main-content", end: "bottom bottom", scrub: true }
-            });
-            gsap.to(camTargetLookAt, {
-                x: 0, y: 6, z: 0, ease: "none",
-                scrollTrigger: { trigger: "#act4", start: "top bottom", endTrigger: "#main-content", end: "bottom bottom", scrub: true }
-            });
+            const shuffled = allPods.sort(() => 0.5 - Math.random());
             
-            gsap.to(dofTarget, {
-                focus: 30.0, ease: "none",
-                scrollTrigger: { trigger: "#act4", start: "top bottom", endTrigger: "#main-content", end: "bottom bottom", scrub: true }
-            });
-            
-            const shuffledPods = act4Pods.sort(() => 0.5 - Math.random());
-            gsap.to(shuffledPods.map(p => p.scale), {
-                x: 1, y: 1, z: 1, ease: "power2.out", stagger: 0.01, 
-                scrollTrigger: { trigger: "#act4", start: "top 50%", endTrigger: "#main-content", end: "bottom bottom", scrub: true }
+            dropTl.fromTo(shuffled.map(p => p.mesh.position), 
+                { y: (i) => shuffled[i].targetY + 20 },
+                { y: (i) => shuffled[i].targetY, ease: "none", stagger: 0.05 }, 0
+            );
+            dropTl.fromTo(shuffled.map(p => p.mesh.scale),
+                { x: 0, y: 0, z: 0 },
+                { x: 1, y: 1, z: 1, ease: "none", stagger: 0.05 }, 0
+            );
+
+            // Act 5: Utopia - Camera pulls far back
+            gsap.to(camTargetPos, { x: targetBuildingPos.x - 20, y: targetBuildingPos.y + 25, z: targetBuildingPos.z + 25, ease: "none", scrollTrigger: { trigger: "#act5-track", start: "top bottom", endTrigger: "#main-content", end: "bottom bottom", scrub: 1.5 }});
+            gsap.to(camTargetLookAt, { x: 0, y: 6, z: 0, ease: "none", scrollTrigger: { trigger: "#act5-track", start: "top bottom", endTrigger: "#main-content", end: "bottom bottom", scrub: 1.5 }});
+            gsap.to(dofTarget, { focus: 35.0, ease: "none", scrollTrigger: { trigger: "#act5-track", start: "top bottom", endTrigger: "#main-content", end: "bottom bottom", scrub: 1.5 }});
+
+            // NAV HIGHLIGHTING LOGIC
+            const acts = ['act1', 'act2', 'act3', 'act4', 'act5'];
+            acts.forEach((act) => {
+                ScrollTrigger.create({
+                    trigger: `#${act}-track`,
+                    start: "top 60%",
+                    end: "bottom 40%",
+                    onEnter: () => gsap.to(`#nav-${act}`, { color: "#ff6600", opacity: 1, scale: 1.1, transformOrigin: "right center", duration: 0.3 }),
+                    onLeave: () => gsap.to(`#nav-${act}`, { color: "#ffffff", opacity: 0.8, scale: 1, duration: 0.3 }),
+                    onEnterBack: () => gsap.to(`#nav-${act}`, { color: "#ff6600", opacity: 1, scale: 1.1, transformOrigin: "right center", duration: 0.3 }),
+                    onLeaveBack: () => gsap.to(`#nav-${act}`, { color: "#ffffff", opacity: 0.8, scale: 1, duration: 0.3 })
+                });
             });
 
             const clock = new THREE.Clock();
-
             function animate() {
                 requestAnimationFrame(animate);
-
                 camRigPos.lerp(camTargetPos, 0.03); 
                 currentLookAt.lerp(camTargetLookAt, 0.04);
-                
                 currentDof.focus += (dofTarget.focus - currentDof.focus) * 0.05;
                 bokehPass.uniforms.focus.value = currentDof.focus;
 
@@ -712,7 +735,6 @@
                 camera.position.z = camRigPos.z; 
                 
                 camera.lookAt(currentLookAt);
-
                 composer.render();
             }
             animate();
