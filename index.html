@@ -105,10 +105,9 @@
 
         #webgl-canvas {
             position: fixed;
-            top: 0; left: 0;
-            width: 100vw; 
-            height: 100vh; /* Fallback */
-            height: 100dvh;
+            inset: 0;
+            width: 100%;
+            height: 100%;
             z-index: -1;
             pointer-events: none;
         }
@@ -257,7 +256,7 @@
     <main class="relative w-full" id="main-content">
         
         <!-- FIXED TEXT CONTAINER -->
-        <div id="narrative-container" class="fixed inset-x-0 top-0 h-[100dvh] pointer-events-none z-10 flex flex-col justify-end p-4 md:p-8 xl:p-12 pb-10 md:pb-16">
+        <div id="narrative-container" class="fixed inset-0 pointer-events-none z-10 flex flex-col justify-end p-4 md:p-8 xl:p-12 pb-10 md:pb-16">
             
             <!-- Act 1: Center Center -->
             <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-8 md:p-16 opacity-0" id="act1-text">
