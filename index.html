@@ -776,17 +776,19 @@
             }
             animate();
 
-            let resizeTimeout;
+            let cachedWidth = window.innerWidth;
+            let cachedHeight = window.innerHeight;
             window.addEventListener('resize', () => {
-                // Debounce resize to prevent performance hit on mobile scroll
-                clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(() => {
+                // Resize if width changes, or if height changes significantly (e.g., mobile address bar showing/hiding)
+                if (window.innerWidth !== cachedWidth || Math.abs(window.innerHeight - cachedHeight) > 60) {
+                    cachedWidth = window.innerWidth;
+                    cachedHeight = window.innerHeight;
                     camera.aspect = window.innerWidth / window.innerHeight;
                     camera.updateProjectionMatrix();
                     renderer.setSize(window.innerWidth, window.innerHeight);
                     composer.setSize(window.innerWidth, window.innerHeight);
                     bokehPass.uniforms.aspect.value = camera.aspect;
-                }, 150);
+                }
             });
         }
 
