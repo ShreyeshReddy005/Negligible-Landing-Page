@@ -776,16 +776,17 @@
             }
             animate();
 
-            let cachedWidth = window.innerWidth;
+            let resizeTimeout;
             window.addEventListener('resize', () => {
-                if (window.innerWidth !== cachedWidth) {
-                    cachedWidth = window.innerWidth;
+                // Debounce resize to prevent performance hit on mobile scroll
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
                     camera.aspect = window.innerWidth / window.innerHeight;
                     camera.updateProjectionMatrix();
                     renderer.setSize(window.innerWidth, window.innerHeight);
                     composer.setSize(window.innerWidth, window.innerHeight);
                     bokehPass.uniforms.aspect.value = camera.aspect;
-                }
+                }, 150);
             });
         }
 
